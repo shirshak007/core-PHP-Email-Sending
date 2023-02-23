@@ -17,23 +17,23 @@ require './phpMailerLib/vendor/autoload.php';
 $mail = new PHPMailer(true);
 
 try {
-  //Server settings
-  $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-  $mail->isSMTP();                                            //Send using SMTP
-  $mail->Host       = 'ssl://smtp.gmail.com';                     //Set the SMTP server to send through
-  $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-  $mail->Username   = 'yourEmailId@example.com';                     //SMTP username
-  $mail->Password   = 'yourAppPassword';                               //SMTP password //see readme
-  $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+	//Server settings
+	$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+	$mail->isSMTP();                                            //Send using SMTP
+	$mail->Host       = 'ssl://smtp.gmail.com';                     //Set the SMTP server to send through
+	$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+	$mail->Username   = 'yourEmailId@example.com';                     //SMTP username
+	$mail->Password   = 'yourAppPassword';                               //SMTP password //see readme
+	$mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-  //Recipients
-  $mail->setFrom('yourEmailId@example.com', 'Your Name');
-  $mail->addAddress('receiver1@example.com');     //Add a recipient
-  //$mail->addAddress('receiver2@example.com', 'Joe User');     //Repeat to add more; name is optional
+	//Recipients
+	$mail->setFrom('yourEmailId@example.com', 'Your Name');
+	$mail->addAddress('receiver1@example.com');     //Add a recipient
+	//$mail->addAddress('receiver2@example.com', 'Joe User');     //Repeat to add more; name is optional
 	$mail->addReplyTo('info@example.com', 'Information');
 	$mail->addCC('cc@example.com');
 	$mail->addBCC('bcc@example.com');
-    
+
 	//Content
 	$mail->isHTML(true);			//Set email format to HTML
 	$mail->Subject = 'PHP Email Sending';
