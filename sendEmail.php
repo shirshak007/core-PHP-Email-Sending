@@ -33,7 +33,8 @@ try {
 	$mail->addReplyTo('info@example.com', 'Information');
 	$mail->addCC('cc@example.com');
 	$mail->addBCC('bcc@example.com');
-
+	$mail->addAttachment('/path/to/filename1.jpg');
+	$mail->addAttachment('/path/to/filename2.png');
 	//Content
 	$mail->isHTML(true);			//Set email format to HTML
 	$mail->Subject = 'PHP Email Sending';
